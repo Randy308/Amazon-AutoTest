@@ -1,7 +1,8 @@
 # Amazon-AutoTest: Automatización de Pruebas con Selenium en Amazon
 
 El repositorio "Amazon-AutoTest" es una colección de pruebas automatizadas desarrolladas con Selenium, enfocadas específicamente en el entorno de Amazon. Este repositorio proporciona un conjunto de scripts y casos de prueba que permiten realizar pruebas exhaustivas y repetibles en la plataforma de comercio electrónico líder en el mundo.
-
+## Preconditions
+Gradle 6.6.1 Java 1.8.0
 ## Características principales
 
 - Automatización de pruebas en Amazon utilizando Selenium.
