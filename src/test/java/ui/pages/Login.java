@@ -1,5 +1,6 @@
 package ui.pages;
 
+import org.apache.commons.codec.binary.Base64;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
@@ -22,21 +23,24 @@ public class Login extends AbstractPageObject {
     @FindBy(css = "a#ap-account-fixup-phone-skip-link")
     private WebElement phoneSkip;
 
-   public void login (String user, String password ) throws InterruptedException {
-       action.sendText(userNameText,user);
-       //Click en el boton continue
-       action.click(loginNameButton);
-       //Escribimos el password
-       action.sendText(passwordText,password);
-       //Click en el boton Login
-       Thread.sleep(10000);
-       action.click(passwordLoginButton);
-       Thread.sleep(5000);
-       //action.click(phoneSkip);
-   }
-   public String getMessage(){
-      return  action.getText(messageError);
-   }
+    public void login (String user, String password ) throws InterruptedException {
+
+        byte[] valueDecoded = Base64.decodeBase64(password);
+        password= new String(valueDecoded);
+        action.sendText(userNameText,user);
+        //Click en el boton continue
+        action.click(loginNameButton);
+        //Escribimos el password
+        action.sendText(passwordText,password);
+        //Click en el boton Login
+        Thread.sleep(3000);
+        action.click(passwordLoginButton);
+        Thread.sleep(3000);
+        //action.click(phoneSkip);
+    }
+    public String getMessage(){
+        return  action.getText(messageError);
+    }
 
 }
 

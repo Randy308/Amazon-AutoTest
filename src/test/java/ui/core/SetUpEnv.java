@@ -9,7 +9,7 @@ public class SetUpEnv {
     public static String BROWSER(){
         Properties properties= new Properties();
         try {
-            properties.load(new FileReader("src/test/resources/SetupEnveroment.properties"));
+            properties.load(new FileReader("src/test/resources/SetupEnvironment.properties"));
         } catch (IOException e) {
             e.printStackTrace();
         }
@@ -18,7 +18,7 @@ public class SetUpEnv {
     public static String BASE_URL(){
         Properties properties= new Properties();
         try {
-            properties.load(new FileReader("src/test/resources/SetupEnveroment.properties"));
+            properties.load(new FileReader("src/test/resources/SetupEnvironment.properties"));
         } catch (IOException e) {
             e.printStackTrace();
         }
